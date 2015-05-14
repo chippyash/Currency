@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="currencies" type="currenciesType"/>
+  <xs:complexType name="currenciesType">
+    <xs:sequence>
+      <xs:element type="currencyType" name="currency" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="currencyType">
+    <xs:sequence>
+      <xs:element type="nameType" name="name"/>
+      <xs:element name="exponent">
+        <xs:simpleType>
+          <xs:restriction base="xs:byte">
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="symbolType" name="symbol"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="code" use="optional"/>
+    <xs:attribute type="xs:short" name="number" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="symbolType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="decimal" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="nameType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="lang" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
