@@ -186,6 +186,10 @@ In either case, you'll find three classes have been generated in your target dir
 - GBP.php
 - USD.php
 
+### Class diagram
+
+![currency class diagram](https://github.com/chippyash/currency/blob/master/docs/class-diagram.jpg)
+
 ### Changing the library
 
 1.  fork it
