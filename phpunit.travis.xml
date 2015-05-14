@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-PHPUnit configuration file to run chippyash\Matrix tests
+PHPUnit configuration file to run chippyash\Currency tests
 -->
 
 <!--
@@ -34,8 +34,8 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
          verbose="false">
 
     <testsuites>
-        <testsuite name="chippyash/Matrix Test Suite">
-            <directory phpVersion="5.4.0" phpVersionOperator=">=">./test/src/</directory>
+        <testsuite name="chippyash/Currency Test Suite">
+            <directory phpVersion="5.4.0" phpVersionOperator=">=">./test/</directory>
         </testsuite>
     </testsuites>
     <!--
@@ -45,8 +45,8 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
     <filter>
         <blacklist>
             <directory>./vendor</directory>
-            <!-- don't cover interfaces -->
-            <directory suffix=".php">./src/chippyash/Type/Interfaces</directory>
+            <directory>./bin</directory>
+            <file>./src/chippyash/Currency/CurrencyInterface.php</file>
         </blacklist>
     </filter>
 
