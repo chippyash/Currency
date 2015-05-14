@@ -12,9 +12,12 @@
     }
   ],
   "require": {
-    "chippyash/strong-type": "~2.1.0"
+    "php":">=5.3",
+    "chippyash/strong-type": "~2.1.0",
+    "ext-intl":"*"
   },
   "require-dev": {
+    "php":">=5.5",
     "phpunit/phpunit": "~4.6.6",
     "chippyash/builderpattern": "1.1.0",
     "mikey179/vfsStream": "v1.5.0",
