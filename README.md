@@ -170,17 +170,17 @@ The parameters (in order of use,) are:
 Assuming our current locale is the one we require, we can then run the program 3 times to generate the classes:
 
 <pre>
-bin/generate-currency-class.php aud MyApp\\\\Currency /home/foo/Projects/MyApp/Currency
-bin/generate-currency-class.php gbp MyApp\\\\Currency /home/foo/Projects/MyApp/Currency
-bin/generate-currency-class.php usd MyApp\\\\Currency /home/foo/Projects/MyApp/Currency
+bin/generate-currency-class.php aud MyApp\\Currency /home/foo/Projects/MyApp/Currency
+bin/generate-currency-class.php gbp MyApp\\Currency /home/foo/Projects/MyApp/Currency
+bin/generate-currency-class.php usd MyApp\\Currency /home/foo/Projects/MyApp/Currency
 </pre>
 
 Let's say we also want to support display of these currencies in France. We can generate thus: 
 
 <pre>
-bin/generate-currency-class.php aud MyApp\\\\Currency\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
-bin/generate-currency-class.php gbp MyApp\\\\Currency\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
-bin/generate-currency-class.php usd MyApp\\\\Currency\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
+bin/generate-currency-class.php aud MyApp\\Currency\\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
+bin/generate-currency-class.php gbp MyApp\\Currency\\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
+bin/generate-currency-class.php usd MyApp\\Currency\\Fr /home/foo/Projects/MyApp/Currency/Fr fr_FR
 </pre>
 
 In either case, you'll find three classes have been generated in your target directory:
