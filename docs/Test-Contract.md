@@ -4,7 +4,7 @@
 
 *  Build will create result parameters for a currency
 
-## Currency\Builder\CurrencyDirector
+## chippyash\Test\Currency\Builder\CurrencyDirector
 
 *  Build will save currency class file and return file contents
 

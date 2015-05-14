@@ -7,7 +7,7 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace Currency\Builder;
+namespace chippyash\Test\Currency\Builder;
 
 
 use chippyash\Type\String\StringType;
