@@ -3,7 +3,7 @@
 ## Quality Assurance
 
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
-[![Coverage Status](https://coveralls.io/repos/chippyash/currency/badge.svg)](https://coveralls.io/r/chippyash/currency)
+[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg)](https://coveralls.io/r/chippyash/Currency)
 
 Certified for PHP 5.3 (Production), Requires PHP 5.5  for Development
 
