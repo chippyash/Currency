@@ -2,6 +2,9 @@
 
 ## Quality Assurance
 
+[![Build Status](https://travis-ci.org/chippyash/currency.svg?branch=master)](https://travis-ci.org/chippyash/currency)
+[![Coverage Status](https://coveralls.io/repos/chippyash/currency/badge.svg)](https://coveralls.io/r/chippyash/currency)
+
 Certified for PHP 5.5
 
 See the [Test Contract](https://github.com/chippyash/currency/blob/master/docs/Test-Contract.md)
