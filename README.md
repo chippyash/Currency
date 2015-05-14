@@ -4,6 +4,8 @@
 
 Certified for PHP 5.5
 
+See the [Test Contract](https://github.com/chippyash/currency/blob/master/docs/Test-Contract.md)
+
 ## What?
 
 Provides strong type implementation of an [ISO-4217](http://en.wikipedia.org/wiki/ISO_4217) Current Currency.  Includes 
@@ -46,6 +48,7 @@ See [The Matrix Packages](http://the-matrix.github.io/packages/) for other packa
 ### Roadmap
 
 V1 - support for native PHP integer based currencies
+
 V2 - support for StrongType GMPIntType based currencies
 
 ## How
@@ -83,8 +86,8 @@ Create currency directly:
     $symbol = 'f';
     $foo = new Currency($value, $code, $symbol);
     
-    //set the precision - and this is where using the Factory starts to win out unless of course you are creating
-    //fantasy currencies
+    //set the precision - and this is where using the Factory starts to 
+    // win out unless of course you are creating fantasy currencies
     $precision = 3; //default precision == 2
     $foo = new Currency($value, $code, $symbol, $precision);
     //set long name
@@ -121,7 +124,7 @@ whereas
 
 will display:
 
-£1 200,26
+1 200,26 £
 
 In both cases, $gbp->get() (or simply $gbp()) will return 120026, i.e. an int.
 
@@ -149,7 +152,7 @@ Please note that the strongtype magic \__toString() method, will return the valu
 #### Generating your own application hard currencies
 
 Let's say that your application is only interested in using AUD, GBP and USD.  From a processing point of view, constantly
-having to query the currencies.xml file, which although optimized, is still large, is potentially an expensive process.
+having to query the currencies.xml file, which although optimized, is still large, and is potentially an expensive process.
 
 A utility is provided to enable you generate 'hard' currency classes to disk.  You will need to have installed the
 library via Composer with dev requirements (default for Composer).  The utility can be found at bin/generate-currency-class.php.
@@ -221,7 +224,7 @@ The data sets are sourced from various places:
 
 ## Where?
 
-The library is hosted at [Github](https://github.com/chippyash/Currency). It is
+The library is hosted at [Github](https://github.com/chippyash/currency). It is
 available at [Packagist.org](https://packagist.org/packages/chippyash/currency)
 
 ### Installation
