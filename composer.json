@@ -1,8 +1,10 @@
 {
   "name": "chippyash/currency",
-  "description": "Currency support based on strong types",
+  "description": "Locale aware currency support based on strong types",
   "minimum-stability": "stable",
-  "license": "GPL V3+",
+  "homepage" : "http://the-matrix.github.io/",
+  "license": "GPL 3.0",
+  "keywords": ["locale","currency","currencies","strong","integer", "international"],
   "authors": [
     {
       "name": "Ashley Kitson",
