@@ -3,7 +3,7 @@
 ## Quality Assurance
 
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
-[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg)](https://coveralls.io/r/chippyash/Currency)
+[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
 
 Certified for PHP 5.3 (Production), Requires PHP 5.5  for Development
 
@@ -231,7 +231,7 @@ The data sets are sourced from various places:
 
 ## Where?
 
-The library is hosted at [Github](https://github.com/chippyash/currency). It is
+The library is hosted at [Github](https://github.com/chippyash/Currency). It is
 available at [Packagist.org](https://packagist.org/packages/chippyash/currency)
 
 ### Installation
