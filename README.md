@@ -244,8 +244,6 @@ Install [Composer](https://getcomposer.org/)
     "chippyash/currency": "~1.0.0"
 </pre>
 
-NB - for a short while before V1 release, you'll need to specify dev-master as the version.
-
 #### For development
 
 Clone this repo, and then run Composer in local repo root to pull in dependencies
@@ -265,6 +263,6 @@ To run the tests:
 
 ## History
 
-V0...  pre releases
+V1.0.0 Initial release
 
 
