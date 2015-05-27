@@ -32,8 +32,8 @@ with a few chosen currencies, use a utility program to generate 'hard' currencie
 
 ## When
 
-The library is currently under development to support a 'Simple Accounting' (double entry book-keeping) library.
-It is based on the chippyash\StrongType set of classes and offers:
+The library was developed to support a '[Simple Accounting](https://github.com/chippyash/Simple-Accounts)' (double entry book-keeping) library.
+It is based on the [chippyash\StrongType](https://github.com/chippyash/Strong-Type) set of classes and offers:
 
 * a native PHP IntType based Currency
 * a Factory to create currencies
