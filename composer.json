@@ -19,7 +19,7 @@
   "require-dev": {
     "php":">=5.5",
     "phpunit/phpunit": "~4.6.6",
-    "Chippyash/builderpattern": "1.1.0",
+    "chippyash/builderpattern": "~2",
     "mikey179/vfsStream": "v1.5.0",
     "satooshi/php-coveralls" : "dev-master"
   },

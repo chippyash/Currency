@@ -10,7 +10,7 @@
 namespace Chippyash\Currency\Builder;
 
 
-use chippyash\BuilderPattern\AbstractDirector;
+use Chippyash\BuilderPattern\AbstractDirector;
 use Chippyash\Type\String\StringType;
 
 /**

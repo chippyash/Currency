@@ -8,7 +8,7 @@
  */
 namespace Chippyash\Currency\Builder;
 
-use chippyash\BuilderPattern\AbstractBuilder;
+use Chippyash\BuilderPattern\AbstractBuilder;
 use Chippyash\Currency\Factory;
 use Chippyash\Type\String\StringType;
 

@@ -10,8 +10,8 @@
 namespace Chippyash\Currency\Builder;
 
 
-use chippyash\BuilderPattern\BuilderInterface;
-use chippyash\BuilderPattern\RendererInterface;
+use Chippyash\BuilderPattern\BuilderInterface;
+use Chippyash\BuilderPattern\RendererInterface;
 use Chippyash\Type\String\StringType;
 
 class CurrencyRenderer implements RendererInterface
