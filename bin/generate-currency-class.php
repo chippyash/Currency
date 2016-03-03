@@ -17,8 +17,8 @@ namespace chippyash\Currency;
 
 include_once realpath(__DIR__ . '/../vendor/autoload.php');
 
-use chippyash\Currency\Builder\CurrencyDirector;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Builder\CurrencyDirector;
+use Chippyash\Type\String\StringType;
 
 if ($argc < 4) {
     echo "Please supply arguments: code, namespace, destDir[, locale]\n";

@@ -6,11 +6,11 @@
  * @copyright Ashley Kitson, 2015, UK
  * @license GPL V3+ See LICENSE.md
  */
-namespace chippyash\Currency\Builder;
+namespace Chippyash\Currency\Builder;
 
 use chippyash\BuilderPattern\AbstractBuilder;
-use chippyash\Currency\Factory;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Factory;
+use Chippyash\Type\String\StringType;
 
 /**
  * Hard currency builder

@@ -7,12 +7,12 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Currency\Builder;
+namespace Chippyash\Currency\Builder;
 
 
 use chippyash\BuilderPattern\BuilderInterface;
 use chippyash\BuilderPattern\RendererInterface;
-use chippyash\Type\String\StringType;
+use Chippyash\Type\String\StringType;
 
 class CurrencyRenderer implements RendererInterface
 {

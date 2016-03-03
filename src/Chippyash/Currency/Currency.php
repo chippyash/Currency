@@ -7,11 +7,11 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Currency;
+namespace Chippyash\Currency;
 
-use chippyash\Type\Interfaces\NumericTypeInterface;
-use chippyash\Type\Number\IntType;
-use chippyash\Type\String\StringType;
+use Chippyash\Type\Interfaces\NumericTypeInterface;
+use Chippyash\Type\Number\IntType;
+use Chippyash\Type\String\StringType;
 
 /**
  * A currency object

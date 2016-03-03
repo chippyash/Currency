@@ -1,6 +1,6 @@
 <?php
 /**
- * chippyash/Currency: hard currency
+ * Chippyash/Currency: hard currency
  * Created by generate-currency-class.php
 
  * @author Ashley Kitson
@@ -9,8 +9,8 @@
  */
 namespace <namespace>;
 
-use chippyash\Currency\Currency;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Currency;
+use Chippyash\Type\String\StringType;
 
 /**
  * Hard currency: <name>

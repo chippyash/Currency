@@ -7,9 +7,9 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Test\Currency;
+namespace Chippyash\Test\Currency;
 
-use chippyash\Currency\Factory;
+use Chippyash\Currency\Factory;
 
 class FactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,7 +35,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         Factory::setLocale('en_GB');
         $crcy = Factory::create('GBP');
-        $this->assertInstanceOf('chippyash\Currency\Currency', $crcy);
+        $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
         $this->assertEquals('£0.00', $crcy->display());
     }
 
@@ -43,7 +43,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         Factory::setLocale('en_GB');
         $crcy = Factory::create('INR',2000.12);
-        $this->assertInstanceOf('chippyash\Currency\Currency', $crcy);
+        $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
         $this->assertEquals('₹2,000.12', $crcy->display());
     }
 
@@ -51,7 +51,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         Factory::setLocale('en_GB');
         $crcy = Factory::create('XUA',2000);
-        $this->assertInstanceOf('chippyash\Currency\Currency', $crcy);
+        $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
         $this->assertEquals('XUA2,000', $crcy->display());
     }
 
@@ -59,7 +59,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         Factory::setLocale('en_GB');
         $crcy = Factory::create('OMR',2000);
-        $this->assertInstanceOf('chippyash\Currency\Currency', $crcy);
+        $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
         $this->assertEquals('﷼2,000.000', $crcy->display());
     }
 
@@ -79,7 +79,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         Factory::setLocale('fr_FR');
         $crcy = Factory::create('EUR',2000);
-        $this->assertInstanceOf('chippyash\Currency\Currency', $crcy);
+        $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
         $this->assertEquals('2 000,00 €', $crcy->display());
     }
 

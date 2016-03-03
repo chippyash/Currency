@@ -7,11 +7,11 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Test\Currency\Builder;
+namespace Chippyash\Test\Currency\Builder;
 
 
-use chippyash\Currency\Builder\CurrencyBuilder;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Builder\CurrencyBuilder;
+use Chippyash\Type\String\StringType;
 
 class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
 {

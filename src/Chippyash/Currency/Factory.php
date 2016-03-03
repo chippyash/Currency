@@ -7,11 +7,10 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Currency;
+namespace Chippyash\Currency;
 
 
-use chippyash\Currency\Currency;
-use chippyash\Type\String\StringType;
+use Chippyash\Type\String\StringType;
 
 abstract class Factory
 {

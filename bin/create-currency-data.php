@@ -164,7 +164,7 @@ function main()
         }
     }
 
-    $fOut->save(realpath(__DIR__ . '/../src/chippyash/Currency') . '/currencies.xml');
+    $fOut->save(realpath(__DIR__ . '/../src/Chippyash/Currency') . '/currencies.xml');
 }
 
 //set errors to create exceptions

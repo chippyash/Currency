@@ -1,13 +1,13 @@
-# chippyash/Currency
+# Chippyash/Currency
 
 ## Quality Assurance
 
-[![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
-[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
+[![Build Status](https://travis-ci.org/Chippyash/Currency.svg?branch=master)](https://travis-ci.org/Chippyash/Currency)
+[![Coverage Status](https://coveralls.io/repos/Chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/Chippyash/Currency?branch=master)
 
 Certified for PHP 5.3 (Production), Requires PHP 5.5  for Development
 
-See the [Test Contract](https://github.com/chippyash/currency/blob/master/docs/Test-Contract.md)
+See the [Test Contract](https://github.com/Chippyash/currency/blob/master/docs/Test-Contract.md)
 
 ## What?
 
@@ -32,8 +32,8 @@ with a few chosen currencies, use a utility program to generate 'hard' currencie
 
 ## When
 
-The library was developed to support a '[Simple Accounting](https://github.com/chippyash/Simple-Accounts)' (double entry book-keeping) library.
-It is based on the [chippyash\StrongType](https://github.com/chippyash/Strong-Type) set of classes and offers:
+The library was developed to support a '[Simple Accounting](https://github.com/Chippyash/Simple-Accounts)' (double entry book-keeping) library.
+It is based on the [Chippyash\StrongType](https://github.com/Chippyash/Strong-Type) set of classes and offers:
 
 * a native PHP IntType based Currency
 * a Factory to create currencies
@@ -46,7 +46,7 @@ data/symbols.html file needs a/ refactoring into an xml file and b/ having missi
  look at docs/missing-symbols.md as a starting point.  Most of the missing information is available on Wikipedia, but
  it is a manual task to transcribe.
 
-See [The Matrix Packages](http://the-matrix.github.io/packages/) for other packages from chippyash
+See [The Matrix Packages](http://the-matrix.github.io/packages/) for other packages from Chippyash
 
 ### Roadmap
 
@@ -61,7 +61,7 @@ V2 - support for StrongType GMPIntType based currencies
 Create a currency (in your current default locale,) via the Type Factory:
 
 <pre>
-    use chippyash\Currency\Factory;
+    use Chippyash\Currency\Factory;
     
     $gbp = Factory::create('GBP');
     //or with an initial value
@@ -71,7 +71,7 @@ Create a currency (in your current default locale,) via the Type Factory:
 Create a currency for a different locale:
 
 <pre>
-    use chippyash\Currency\Factory;
+    use Chippyash\Currency\Factory;
 
     Factory::setLocale('fr_FR');
     $euro = Factory::create('EUR');
@@ -82,7 +82,7 @@ Create a currency for a different locale:
 Create currency directly:
 
 <pre>
-    use chippyash\Currency\Currency;
+    use Chippyash\Currency\Currency;
     
     $value = 12.26;
     $code = 'FOO';
@@ -134,7 +134,7 @@ In both cases, $gbp->get() (or simply $gbp()) will return 120026, i.e. an int.
 If you need the value as a float downscaled according to its precision use getAsFloat()
 
 As alluded to above, the Currency class is based on the strongtype IntType.  This is because integer maths is far more
-accurate than floating point maths and if you were to throw some Currencies at the chippyash/math-type-calculator then
+accurate than floating point maths and if you were to throw some Currencies at the Chippyash/math-type-calculator then
 the results would be more accurate and consistent.  The class knows how to convert to/from int/float using the precision
 parameter and can therefore maintain long term accuracy.
 
@@ -191,7 +191,7 @@ In either case, you'll find three classes have been generated in your target dir
 
 ### Class diagram
 
-![currency class diagram](https://github.com/chippyash/currency/blob/master/docs/class-diagram.jpg)
+![currency class diagram](https://github.com/Chippyash/currency/blob/master/docs/class-diagram.jpg)
 
 ### Changing the library
 
@@ -214,7 +214,7 @@ Or - raise an issue ticket.
 
 As previously stated, we are missing some symbol data in the data set (see docs/missing-symbols.md).  If you update any
 of the files in the data/ directory, you will need to run the bin/create-currency-data.php script to regenerate the
-src/chippyash/Currency/currencies.xml file.  Run this before any pull request to make changes to the data set.
+src/Chippyash/Currency/currencies.xml file.  Run this before any pull request to make changes to the data set.
 
 Please note that CLDR do not provide some currency names for a small set of locales.  The Currency\\Factory will default
 to using the base language translation if it can find one, or the English name as a backstop.
@@ -231,8 +231,8 @@ The data sets are sourced from various places:
 
 ## Where?
 
-The library is hosted at [Github](https://github.com/chippyash/Currency). It is
-available at [Packagist.org](https://packagist.org/packages/chippyash/currency)
+The library is hosted at [Github](https://github.com/Chippyash/Currency). It is
+available at [Packagist.org](https://packagist.org/packages/Chippyash/currency)
 
 ### Installation
 
@@ -241,7 +241,7 @@ Install [Composer](https://getcomposer.org/)
 #### For production
 
 <pre>
-    "chippyash/currency": "~1.0.0"
+    "Chippyash/currency": "~1"
 </pre>
 
 #### For development
@@ -249,7 +249,7 @@ Install [Composer](https://getcomposer.org/)
 Clone this repo, and then run Composer in local repo root to pull in dependencies
 
 <pre>
-    git clone git@github.com:chippyash/Currency.git Currency
+    git clone git@github.com:Chippyash/Currency.git Currency
     cd Currency
     composer install
 </pre>
@@ -265,4 +265,5 @@ To run the tests:
 
 V1.0.0 Initial release
 
+V1.1.0 Update dependencies
 

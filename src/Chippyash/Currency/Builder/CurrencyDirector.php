@@ -7,11 +7,11 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Currency\Builder;
+namespace Chippyash\Currency\Builder;
 
 
 use chippyash\BuilderPattern\AbstractDirector;
-use chippyash\Type\String\StringType;
+use Chippyash\Type\String\StringType;
 
 /**
  * Currency class build director

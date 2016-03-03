@@ -1,5 +1,5 @@
 {
-  "name": "chippyash/currency",
+  "name": "Chippyash/currency",
   "description": "Locale aware currency support based on strong types",
   "minimum-stability": "stable",
   "homepage" : "http://the-matrix.github.io/",
@@ -13,19 +13,19 @@
   ],
   "require": {
     "php":">=5.3",
-    "chippyash/strong-type": "~2.1.0",
+    "Chippyash/strong-type": "~3",
     "ext-intl":"*"
   },
   "require-dev": {
     "php":">=5.5",
     "phpunit/phpunit": "~4.6.6",
-    "chippyash/builderpattern": "1.1.0",
+    "Chippyash/builderpattern": "1.1.0",
     "mikey179/vfsStream": "v1.5.0",
     "satooshi/php-coveralls" : "dev-master"
   },
   "autoload": {
     "psr-0": {
-      "chippyash\\Currency\\": "src"
+      "Chippyash\\Currency\\": "src"
     }
   }
 }

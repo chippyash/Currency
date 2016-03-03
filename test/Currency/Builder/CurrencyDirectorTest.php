@@ -7,11 +7,11 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Test\Currency\Builder;
+namespace Chippyash\Test\Currency\Builder;
 
 
-use chippyash\Type\String\StringType;
-use chippyash\Currency\Builder\CurrencyDirector;
+use Chippyash\Type\String\StringType;
+use Chippyash\Currency\Builder\CurrencyDirector;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
 

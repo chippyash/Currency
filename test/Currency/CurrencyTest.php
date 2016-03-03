@@ -7,13 +7,13 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Test\Currency;
+namespace Chippyash\Test\Currency;
 
 
-use chippyash\Currency\Currency;
-use chippyash\Type\Number\FloatType;
-use chippyash\Type\Number\IntType;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Currency;
+use Chippyash\Type\Number\FloatType;
+use Chippyash\Type\Number\IntType;
+use Chippyash\Type\String\StringType;
 
 class CurrencyTest extends \PHPUnit_Framework_TestCase {
 

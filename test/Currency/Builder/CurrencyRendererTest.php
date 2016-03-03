@@ -7,10 +7,10 @@
  * @license GPL V3+ See LICENSE.md
  */
 
-namespace chippyash\Test\Currency\Builder;
+namespace Chippyash\Test\Currency\Builder;
 
-use chippyash\Currency\Builder\CurrencyRenderer;
-use chippyash\Type\String\StringType;
+use Chippyash\Currency\Builder\CurrencyRenderer;
+use Chippyash\Type\String\StringType;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
 
@@ -40,7 +40,7 @@ class CurrencyRendererTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWillCreateClassFileAndReturnClassText()
     {
-        $mockBuilder = $this->getMock('chippyash\Currency\Builder\CurrencyBuilder',array(), array(), '', false);
+        $mockBuilder = $this->getMock('Chippyash\Currency\Builder\CurrencyBuilder',array(), array(), '', false);
         $mockBuilder->expects($this->once())
             ->method('getResult')
             ->willReturn(array(
