@@ -241,7 +241,7 @@ Install [Composer](https://getcomposer.org/)
 #### For production
 
 <pre>
-    "Chippyash/currency": "~1"
+    "chippyash/currency": "~2"
 </pre>
 
 #### For development
@@ -249,7 +249,7 @@ Install [Composer](https://getcomposer.org/)
 Clone this repo, and then run Composer in local repo root to pull in dependencies
 
 <pre>
-    git clone git@github.com:Chippyash/Currency.git Currency
+    git clone git@github.com:chippyash/Currency.git Currency
     cd Currency
     composer install
 </pre>
@@ -265,5 +265,5 @@ To run the tests:
 
 V1.0.0 Initial release
 
-V1.1.0 Update dependencies
+V2.0.0 BC Break: namespace changed from chippyash\Currency to Chippyash\Currency
 
