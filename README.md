@@ -269,3 +269,5 @@ V2.0.0 BC Break: namespace changed from chippyash\Currency to Chippyash\Currency
 
 V2.0.1 Update dev dependencies
 
+V2.0.2 Switch from coveralls to codeclimate
+
