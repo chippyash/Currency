@@ -46,7 +46,7 @@ data/symbols.html file needs a/ refactoring into an xml file and b/ having missi
  look at docs/missing-symbols.md as a starting point.  Most of the missing information is available on Wikipedia, but
  it is a manual task to transcribe.
 
-See [The Matrix Packages](http://the-matrix.github.io/packages/) for other packages from Chippyash
+Check out [ZF4 Packages](http://zf4.biz/packages?utm_source=github&utm_medium=web&utm_campaign=blinks&utm_content=currency) for more packages
 
 ### Roadmap
 
@@ -271,3 +271,4 @@ V2.0.1 Update dev dependencies
 
 V2.0.2 Switch from coveralls to codeclimate
 
+V2.0.3 Add link to packages
