@@ -2,8 +2,8 @@
 
 ## Quality Assurance
 
-[![Build Status](https://travis-ci.org/Chippyash/Currency.svg?branch=master)](https://travis-ci.org/Chippyash/Currency)
-[![Coverage Status](https://coveralls.io/repos/Chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/Chippyash/Currency?branch=master)
+[![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
+[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
 
 Certified for PHP 5.3 (Production), Requires PHP 5.5  for Development
 
