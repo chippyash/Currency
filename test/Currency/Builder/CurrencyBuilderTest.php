@@ -27,14 +27,14 @@ class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->saveLocale = locale_get_default();
+        $this->saveLocale = \locale_get_default();
         locale_set_default('en_GB');
         $this->sut = new CurrencyBuilder(new StringType('GBP'));
     }
 
     protected function tearDown()
     {
-        locale_set_default($this->saveLocale);
+        \locale_set_default($this->saveLocale);
     }
 
     public function testBuildWillCreateResultParametersForACurrency()

@@ -2,10 +2,15 @@
 
 ## Quality Assurance
 
+![PHP 5.3](https://img.shields.io/badge/PHP-5.3-blue.svg)
+![PHP 5.4](https://img.shields.io/badge/PHP-5.4-blue.svg)
+![PHP 5.5](https://img.shields.io/badge/PHP-5.5-blue.svg)
+![PHP 5.6](https://img.shields.io/badge/PHP-5.6-blue.svg)
+![PHP 7](https://img.shields.io/badge/PHP-7-blue.svg)
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
 [![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
 
-Certified for PHP 5.3 (Production), Requires PHP 5.5  for Development
+Certified for PHP 5.3+ (Production), Requires PHP 5.5+  for Development
 
 See the [Test Contract](https://github.com/Chippyash/currency/blob/master/docs/Test-Contract.md)
 
@@ -50,9 +55,9 @@ Check out [ZF4 Packages](http://zf4.biz/packages?utm_source=github&utm_medium=we
 
 ### Roadmap
 
-V1 - support for native PHP integer based currencies
+V1 - support for StrongType native PHP integer based currencies
 
-V2 - support for StrongType GMPIntType based currencies
+V3 - support for StrongType GMPIntType based currencies
 
 ## How
 
@@ -272,3 +277,6 @@ V2.0.1 Update dev dependencies
 V2.0.2 Switch from coveralls to codeclimate
 
 V2.0.3 Add link to packages
+
+V2.0.4 Fix badge links
+
