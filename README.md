@@ -282,3 +282,5 @@ V2.0.4 Fix badge links
 
 V2.0.5 Verfify PHP 7 compatibility
 
+V2.0.6 Dependency update
+

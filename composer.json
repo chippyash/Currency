@@ -13,7 +13,7 @@
   ],
   "require": {
     "php":">=5.3",
-    "Chippyash/strong-type": "~3",
+    "chippyash/strong-type": ">=3,<4",
     "ext-intl":"*"
   },
   "require-dev": {
