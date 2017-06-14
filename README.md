@@ -219,7 +219,12 @@ Or - raise an issue ticket.
 
 As previously stated, we are missing some symbol data in the data set (see docs/missing-symbols.md).  If you update any
 of the files in the data/ directory, you will need to run the bin/create-currency-data.php script to regenerate the
-src/Chippyash/Currency/currencies.xml file.  Run this before any pull request to make changes to the data set.
+src/Chippyash/Currency/currencies.xml file.  
+
+Then run the src/Chippyash/Currency/currency-type-xsd.xsl translation against the resulting currencies.xml
+file to create the src/Chippyash/Currency/currency-type.xsd.
+ 
+Run these before any pull request to make changes to the data set.
 
 Please note that CLDR do not provide some currency names for a small set of locales.  The Currency\\Factory will default
 to using the base language translation if it can find one, or the English name as a backstop.
@@ -283,4 +288,6 @@ V2.0.4 Fix badge links
 V2.0.5 Verfify PHP 7 compatibility
 
 V2.0.6 Dependency update
+
+V2.1.0 Add currency-type.xsd creation
 
