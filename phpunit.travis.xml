@@ -45,10 +45,25 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
         <blacklist>
             <directory>./vendor</directory>
             <directory>./bin</directory>
-            <file>./src/Chippyash/Currency/CurrencyInterface.php</file>
         </blacklist>
     </filter>
 
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>./src</directory>
+            <exclude>
+                <directory>./docs</directory>
+                <directory>./test</directory>
+                <directory>./vendor</directory>
+                <directory>./data</directory>
+                <directory>./bin</directory>
+                <file>./src/Chippyash/Currency/CurrencyInterface.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="./build/logs/clover.xml"/>
+    </logging>
 
 </phpunit>
 

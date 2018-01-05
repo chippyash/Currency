@@ -40,7 +40,9 @@ class CurrencyRendererTest extends \PHPUnit_Framework_TestCase
 
     public function testRenderWillCreateClassFileAndReturnClassText()
     {
-        $mockBuilder = $this->getMock('Chippyash\Currency\Builder\CurrencyBuilder',array(), array(), '', false);
+        $mockBuilder = $this->getMockBuilder('Chippyash\Currency\Builder\CurrencyBuilder')
+            ->disableOriginalConstructor()
+            ->getMock();
         $mockBuilder->expects($this->once())
             ->method('getResult')
             ->willReturn(array(
