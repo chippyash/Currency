@@ -256,7 +256,7 @@ Install [Composer](https://getcomposer.org/)
 #### For production
 
 <pre>
-    "chippyash/currency": "~2"
+    "chippyash/currency": "~3"
 </pre>
 
 #### For development
@@ -295,4 +295,6 @@ V2.0.5 Verfify PHP 7 compatibility
 V2.0.6 Dependency update
 
 V2.1.0 Add currency-type.xsd creation
+
+V3.0.0 PHP 5.3 and 5.4 support withdrawn
 
