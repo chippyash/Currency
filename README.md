@@ -2,17 +2,13 @@
 
 ## Quality Assurance
 
-![PHP 5.4](https://img.shields.io/badge/PHP-5.4-blue.svg)
 ![PHP 5.5](https://img.shields.io/badge/PHP-5.5-blue.svg)
 ![PHP 5.6](https://img.shields.io/badge/PHP-5.6-blue.svg)
 ![PHP 7](https://img.shields.io/badge/PHP-7-blue.svg)
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
 [![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
 
-Certified for PHP 5.4+ (Production), Requires PHP 5.5+  for Development
-
-Please note, developer support for PHP 5.3 was withdrawn as of version 3.  If you need
-5.3 support, use a version < 3.
+Please note, developer support for PHP 5.3/5.4 was withdrawn as of version 3.
 
 See the [Test Contract](https://github.com/Chippyash/currency/blob/master/docs/Test-Contract.md)
 
