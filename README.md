@@ -6,7 +6,8 @@
 ![PHP 5.6](https://img.shields.io/badge/PHP-5.6-blue.svg)
 ![PHP 7](https://img.shields.io/badge/PHP-7-blue.svg)
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
-[![Coverage Status](https://coveralls.io/repos/chippyash/Currency/badge.svg?branch=master)](https://coveralls.io/r/chippyash/Currency?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ef34192bb845b0b8a51a/maintainability)](https://codeclimate.com/github/chippyash/Currency/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ef34192bb845b0b8a51a/test_coverage)](https://codeclimate.com/github/chippyash/Currency/test_coverage)
 
 Please note, developer support for PHP 5.3/5.4 was withdrawn as of version 3.
 
