@@ -299,3 +299,6 @@ V2.1.0 Add currency-type.xsd creation
 
 V3.0.0 PHP 5.3 and 5.4 support withdrawn
 
+V3.0.1 update composer - forced by packagist composer.json format change
+
+
