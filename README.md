@@ -13,12 +13,8 @@ Please note, developer support for PHP 5.3/5.4 was withdrawn as of version 3.
 
 See the [Test Contract](https://github.com/Chippyash/currency/blob/master/docs/Test-Contract.md)
 
-### End of life notice
-
-In March 2018, developer support will be withdrawn from this library for PHP <5.6. Older
-versions of PHP are now in such little use that the added effort of maintaining 
-compatibility is not effort effective.  See [PHP Version Stats](https://seld.be/notes/php-versions-stats-2017-1-edition)
- for the numbers.
+Please note that developer support for PHP5.5 was withdrawn at version 4.0.0 of this library.
+If you need support for PHP 5.5, please use a version `>=3,<4`
  
 ## What?
 
@@ -257,7 +253,7 @@ Install [Composer](https://getcomposer.org/)
 #### For production
 
 <pre>
-    "chippyash/currency": "~3"
+    "chippyash/currency": ">=4,<5"
 </pre>
 
 #### For development
@@ -301,4 +297,5 @@ V3.0.0 PHP 5.3 and 5.4 support withdrawn
 
 V3.0.1 update composer - forced by packagist composer.json format change
 
+V4.0.0 BC Break. Withdraw support for old PHP versions
 

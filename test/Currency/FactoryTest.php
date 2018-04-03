@@ -11,6 +11,13 @@ namespace Chippyash\Test\Currency;
 
 use Chippyash\Currency\Factory;
 
+/**
+ * @see https://github.com/piece/stagehand-testrunner/issues/51
+ */
+if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
+    define('PHPUNIT_COMPOSER_INSTALL', dirname(dirname(__DIR__)) . '/vendor/autoload.php');
+}
+
 class FactoryTest extends \PHPUnit_Framework_TestCase
 {
     protected $locale;
