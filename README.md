@@ -298,3 +298,5 @@ V3.0.1 update composer - forced by packagist composer.json format change
 
 V4.0.0 BC Break. Withdraw support for old PHP versions
 
+V4.0.1 fix namespace issue with native get_locale
+
