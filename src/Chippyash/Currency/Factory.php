@@ -31,10 +31,12 @@ abstract class Factory
     /**
      * Create a currency
      *
-     * @param string $code Currency 3 letter ISO4217 code
-     * @param int $value initial value for currency
+     * @param string $code  Currency 3 letter ISO4217 code
+     * @param int    $value initial value for currency
      *
      * @return Currency
+     *
+     * @throws \ErrorException
      */
     public static function create($code, $value = 0)
     {
@@ -65,7 +67,7 @@ abstract class Factory
     public static function getLocale()
     {
         if (empty(self::$locale)) {
-            self::$locale = new StringType(locale_get_default());
+            self::$locale = new StringType(\locale_get_default());
         }
 
         return self::$locale;
