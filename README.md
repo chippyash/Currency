@@ -300,3 +300,4 @@ V4.0.0 BC Break. Withdraw support for old PHP versions
 
 V4.0.1 fix namespace issue with native get_locale
 
+V4.1.0 ability to get currency precision

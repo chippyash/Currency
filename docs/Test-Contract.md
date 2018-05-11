@@ -23,7 +23,7 @@
 *  You can set and get the name
 *  You can set the display format
 *  You can set the locale
-*  You can set the precision
+*  You can set and get the precision
 *  You can set currency value using a float value
 *  You can set currency value using a strong float type
 *  Using non numeric value to set currency value using float will throw an exception

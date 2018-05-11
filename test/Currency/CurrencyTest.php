@@ -96,10 +96,11 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('1 200,26 £', $this->sut->display());
     }
 
-    public function testYouCanSetThePrecision()
+    public function testYouCanSetAndGetThePrecision()
     {
         $this->sut->setPrecision(new IntType(3));
         $this->assertEquals('£120.026', $this->sut->display());
+        $this->assertEquals(3, $this->sut->getPrecision());
     }
 
     public function testYouCanSetCurrencyValueUsingAFloatValue()

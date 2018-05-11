@@ -195,7 +195,15 @@ class Currency extends IntType implements CurrencyInterface
         return $this;
     }
 
-
+    /**
+     * Return the precision
+     *
+     * @return integer
+     */
+    public function getPrecision()
+    {
+        return $this->precision->get();
+    }
 
     /**
      * Set currency value, upscaling into an integer for internal storage
