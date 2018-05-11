@@ -195,6 +195,8 @@ class Currency extends IntType implements CurrencyInterface
         return $this;
     }
 
+
+
     /**
      * Set currency value, upscaling into an integer for internal storage
      *
