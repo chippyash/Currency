@@ -272,6 +272,12 @@ To run the tests:
     vendor/bin/phpunit -c test/phpunit.xml test/
 </pre>
 
+## License
+
+This software library is released under the [BSD 3 Clause license](https://opensource.org/licenses/BSD-3-Clause)
+
+This software library is Copyright (c) 2015, Ashley Kitson, UK
+
 ## History
 
 V1.0.0 Initial release
@@ -301,3 +307,5 @@ V4.0.0 BC Break. Withdraw support for old PHP versions
 V4.0.1 fix namespace issue with native get_locale
 
 V4.1.0 ability to get currency precision
+
+V4.2.0 Change of license from GPL V3 to BSD 3 Clause
