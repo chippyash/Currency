@@ -267,11 +267,19 @@ class Currency implements CurrencyInterface
         $formatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL, $this->symbol);
         $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->precision);
 
-        return sprintf($this->displayFormat, $formatter->format($this->getAsFloat()));
+        $value = sprintf($this->displayFormat, $formatter->format($this->getAsFloat()));
+        return $this->replaceNbspWithSpace($value);
     }
 
     public function __toString(): string
     {
         return (string) $this->getValue();
+    }
+
+    protected function replaceNbspWithSpace($content){
+        $string = htmlentities($content, ENT_NOQUOTES, 'utf-8');
+        $content = str_replace("&nbsp;", " ", $string);
+        $content = html_entity_decode($content);
+        return $content;
     }
 }

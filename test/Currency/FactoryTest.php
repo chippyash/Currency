@@ -59,7 +59,7 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
         Factory::setLocale('en_GB');
         $crcy = Factory::create('XUA',2000);
         $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
-        $this->assertEquals('XUA 2,000', $crcy->display());
+        $this->assertEquals('XUA 2,000', $crcy->display());
     }
 
     public function testCreateWillReturnCurrencyRespectingExponentsForDisplay()
@@ -85,7 +85,7 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
         Factory::setLocale('fr_FR');
         $crcy = Factory::create('EUR',2000);
         $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
-        $this->assertEquals('2 000,00 €', $crcy->display());
+        $this->assertEquals('2 000,00 €', $crcy->display());
     }
 
     /**
