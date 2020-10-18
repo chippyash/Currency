@@ -11,7 +11,7 @@ namespace Chippyash\Test\Currency\Builder;
 
 use Chippyash\Currency\Builder\CurrencyBuilder;
 
-class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
+class CurrencyBuilderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var CurrencyBuilder
@@ -23,14 +23,14 @@ class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
      */
     protected $saveLocale;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->saveLocale = \locale_get_default();
         locale_set_default('en_GB');
         $this->sut = new CurrencyBuilder('GBP');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         \locale_set_default($this->saveLocale);
     }
@@ -39,7 +39,7 @@ class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue($this->sut->build());
         $result = $this->sut->getResult();
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $this->assertArrayHasKey('code', $result);
         $this->assertArrayHasKey('name', $result);
         $this->assertArrayHasKey('symbol', $result);

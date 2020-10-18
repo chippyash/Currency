@@ -11,7 +11,7 @@ namespace Chippyash\Test\Currency;
 
 use Chippyash\Currency\Currency;
 
-class CurrencyTest extends \PHPUnit_Framework_TestCase {
+class CurrencyTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var Currency
@@ -23,14 +23,14 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
      */
     protected $saveLocale;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sut = new Currency(1200.26, 'GBP', '£');
         $this->saveLocale = locale_get_default();
         $this->sut->setLocale('en_GB');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         locale_set_default($this->saveLocale);
     }
@@ -89,7 +89,7 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
     public function testYouCanSetTheLocale()
     {
         $this->sut->setLocale('fr_FR');
-//        $this->assertEquals('1 200,26 £', $this->sut->display());
+        $this->assertEquals('1 200,26 £', $this->sut->display());
     }
 
     public function testYouCanSetAndGetThePrecision()
@@ -109,11 +109,9 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('£1,020.15', $this->sut->setAsFloat(1020.15)->display());
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testUsingNonNumericValueToSetCurrencyValueUsingFloatWillThrowAnException()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $this->sut->setAsFloat('foo');
     }
 
@@ -136,9 +134,9 @@ class CurrencyTest extends \PHPUnit_Framework_TestCase {
     {
         $this->assertEquals('£1,200.26', $this->sut->display());
         $this->sut->setLocale('fr_FR');
-//        $this->assertEquals('1 200,26 £', $this->sut->display());
+        $this->assertEquals('1 200,26 £', $this->sut->display());
         $this->sut->setLocale('de_DE');
-//        $this->assertEquals('1.200,26 £', $this->sut->display());
+        $this->assertEquals('1.200,26 £', $this->sut->display());
 
     }
 

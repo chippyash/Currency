@@ -3,3 +3,4 @@ vendor*
 composer.lock
 .directory
 .idea
+test/.phpunit.result.cache

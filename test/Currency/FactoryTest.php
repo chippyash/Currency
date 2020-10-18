@@ -18,14 +18,14 @@ if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
     define('PHPUNIT_COMPOSER_INSTALL', dirname(dirname(__DIR__)) . '/vendor/autoload.php');
 }
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends \PHPUnit\Framework\TestCase
 {
     protected $locale;
 
     /**
      * Tests expect to run in known locale
      */
-    protected function SetUp()
+    protected function SetUp(): void
     {
         $this->locale = locale_get_default();
     }
@@ -33,7 +33,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     /**
      * Reinstate system locale
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         locale_set_default($this->locale);
     }
@@ -51,7 +51,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         Factory::setLocale('en_GB');
         $crcy = Factory::create('INR',2000.12);
         $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
-//        $this->assertEquals('₹2,000.12', $crcy->display());
+        $this->assertEquals('₹2,000.12', $crcy->display());
     }
 
     public function testCreateWillReturnCurrencyWithCodeIfNoSymbolAvailable()
@@ -59,7 +59,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         Factory::setLocale('en_GB');
         $crcy = Factory::create('XUA',2000);
         $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
-//        $this->assertEquals('XUA 2,000', $crcy->display());
+        $this->assertEquals('XUA 2,000', $crcy->display());
     }
 
     public function testCreateWillReturnCurrencyRespectingExponentsForDisplay()
@@ -70,12 +70,10 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('﷼2,000.000', $crcy->display());
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Unknown currency:
-     */
     public function testCreateWillThrowExceptionForUnknownCurrency()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Unknown currency');
         $crcy = Factory::create('FOO');
     }
 
@@ -87,7 +85,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         Factory::setLocale('fr_FR');
         $crcy = Factory::create('EUR',2000);
         $this->assertInstanceOf('Chippyash\Currency\Currency', $crcy);
-//        $this->assertEquals('2 000,00 €', $crcy->display());
+        $this->assertEquals('2 000,00 €', $crcy->display());
     }
 
     /**

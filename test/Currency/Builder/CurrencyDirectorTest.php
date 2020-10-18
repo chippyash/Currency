@@ -13,7 +13,7 @@ use Chippyash\Currency\Builder\CurrencyDirector;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
 
-class CurrencyDirectorTest extends \PHPUnit_Framework_TestCase
+class CurrencyDirectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var CurrencyDirector
@@ -30,7 +30,7 @@ class CurrencyDirectorTest extends \PHPUnit_Framework_TestCase
      */
     protected $saveLocale;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->saveLocale = locale_get_default();
         locale_set_default('en_GB');
@@ -38,7 +38,7 @@ class CurrencyDirectorTest extends \PHPUnit_Framework_TestCase
         $this->sut = new CurrencyDirector('GBP', 'foo\bar', $this->rootDir->url());
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         locale_set_default($this->saveLocale);
     }

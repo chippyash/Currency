@@ -20,7 +20,6 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          forceCoversAnnotation="false"
-         mapTestClassNameToCoveredClassName="false"
          printerClass="PHPUnit_TextUI_ResultPrinter"
          processIsolation="false"
          stopOnError="false"
@@ -36,13 +35,13 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
      ! The <filter> element and its children can be used to configure the
      ! blacklist and whitelist for the code coverage reporting.
      !-->
-    <filter>
-        <blacklist>
-            <directory>../vendor</directory>
-            <directory>../bin</directory>
-            <file>../src/Chippyash/Currency/CurrencyInterface.php</file>
-        </blacklist>
-    </filter>
+<!--    <filter>-->
+<!--        <blacklist>-->
+<!--            <directory>../vendor</directory>-->
+<!--            <directory>../bin</directory>-->
+<!--            <file>../src/Chippyash/Currency/CurrencyInterface.php</file>-->
+<!--        </blacklist>-->
+<!--    </filter>-->
 
 
 </phpunit>

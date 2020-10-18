@@ -13,7 +13,7 @@ use Chippyash\Currency\Builder\CurrencyRenderer;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
 
-class CurrencyRendererTest extends \PHPUnit_Framework_TestCase
+class CurrencyRendererTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var CurrencyRenderer
@@ -30,7 +30,7 @@ class CurrencyRendererTest extends \PHPUnit_Framework_TestCase
      */
     protected $saveLocale;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->rootDir = vfsStream::setup('foo');
         $this->sut = new CurrencyRenderer('foo\bar', $this->rootDir->url());
