@@ -38,7 +38,7 @@ with a few chosen currencies, use a utility program to generate 'hard' currencie
 
 ## When
 
-The library was developed to support a '[Simple Accounting](https://github.com/Chippyash/Simple-Accounts)' (double entry book-keeping) library.
+The library was developed to support a '[Simple Accounting](https://github.com/chippyash/simple-accounts-3)' (double entry book-keeping) library.
 
 * a native PHP Integer based Currency
 * a Factory to create currencies
