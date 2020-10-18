@@ -4,3 +4,5 @@ composer.lock
 .directory
 .idea
 test/.phpunit.result.cache
+.phpunit.result.cache
+build/*
