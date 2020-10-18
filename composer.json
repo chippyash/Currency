@@ -29,10 +29,6 @@
       "Chippyash\\Currency\\": "src"
     }
   },
-  "repositories": [{
-    "type": "composer",
-    "url": "https://satis.ops.zinc.systems"
-  }],
   "scripts": {
     "lint:run": "vendor/bin/ecs check src",
     "lint:fix": "vendor/bin/ecs check --fix src",
