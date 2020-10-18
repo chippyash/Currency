@@ -10,7 +10,6 @@
 namespace <namespace>;
 
 use Chippyash\Currency\Currency;
-use Chippyash\Type\String\StringType;
 
 /**
  * Hard currency: <name>
@@ -23,6 +22,6 @@ class <code> extends Currency
     public function __construct()
     {
         parent::__construct(<value>, '<code>', '<symbol>', <precision>, '<name>', '<displayFormat>');
-        $this->setLocale(new StringType('<locale>'));
+        $this->setLocale('<locale>');
     }
 }

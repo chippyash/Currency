@@ -9,9 +9,7 @@
 
 namespace Chippyash\Test\Currency\Builder;
 
-
 use Chippyash\Currency\Builder\CurrencyBuilder;
-use Chippyash\Type\String\StringType;
 
 class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,7 +27,7 @@ class CurrencyBuilderTest extends \PHPUnit_Framework_TestCase
     {
         $this->saveLocale = \locale_get_default();
         locale_set_default('en_GB');
-        $this->sut = new CurrencyBuilder(new StringType('GBP'));
+        $this->sut = new CurrencyBuilder('GBP');
     }
 
     protected function tearDown()

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Currency Support
  *
@@ -9,26 +12,27 @@
 
 namespace Chippyash\Currency;
 
-use Chippyash\Type\Interfaces\NumericTypeInterface;
-use Chippyash\Type\Number\IntType;
-use Chippyash\Type\String\StringType;
-
 /**
  * A currency object
  *
- * Currency values are stored internally as integer values using IntType
+ * Currency values are stored internally as integer values using int
  * This is to ensure that we don't lose precision when manipulating them
  * arithmetically
  */
-class Currency extends IntType implements CurrencyInterface
+class Currency implements CurrencyInterface
 {
     /**
-     * @var StringType
+     * @var int
+     */
+    protected $value;
+
+    /**
+     * @var string
      */
     protected $code;
 
     /**
-     * @var StringType
+     * @var string
      */
     protected $symbol;
 
@@ -36,7 +40,7 @@ class Currency extends IntType implements CurrencyInterface
      * Currency long name
      * If not set, will default to code
      *
-     * @var StringType
+     * @var string
      */
     protected $name;
 
@@ -45,13 +49,13 @@ class Currency extends IntType implements CurrencyInterface
      * Defaults to '%s' if not passed in construction
      *
      * @see display()
-     * @var StringType
+     * @var string
      */
     protected $displayFormat;
 
     /**
      * Locale for displaying currency
-     * @var StringType
+     * @var string
      */
     protected $locale;
 
@@ -59,7 +63,7 @@ class Currency extends IntType implements CurrencyInterface
      * Digits of precision for this currency
      * Defaults to 2 if not passed in construction
      *
-     * @var IntType
+     * @var int
      */
     protected $precision;
 
@@ -67,32 +71,32 @@ class Currency extends IntType implements CurrencyInterface
      * Constructor
      * Will set locale to current default locale
      *
-     * @param numeric $value Value of currency
+     * @param float $value Value of currency
      * @param string $code Code of currency
      * @param string $symbol Symbol for currency
      * @param int $precision number of digits of precision (or exponent) for this currency
      * @param string $name Long name of currency
      * @param string $displayFormat additional user defined display format for currency
      */
-    public function __construct($value, $code, $symbol, $precision = 2, $name = null, $displayFormat = '%s')
+    public function __construct(float $value, string $code, string $symbol, ?int $precision = 2, ?string $name = null, ?string $displayFormat = '%s')
     {
-        $this->setPrecision(new IntType($precision))
+        $this->setPrecision($precision)
             ->setAsFloat($value)
-            ->setCode(new StringType($code))
-            ->setSymbol(new StringType($symbol))
-            ->setDisplayFormat(new StringType($displayFormat))
-            ->setLocale(new StringType(locale_get_default()));
+            ->setCode($code)
+            ->setSymbol($symbol)
+            ->setDisplayFormat($displayFormat)
+            ->setLocale(locale_get_default());
 
         if (!is_null($name)) {
-            $this->setName(new StringType($name));
+            $this->setName($name);
         }
     }
 
     /**
      * Return currency symbol
-     * @return StringType
+     * @return string
      */
-    public function getSymbol()
+    public function getSymbol(): string
     {
         return $this->symbol;
     }
@@ -100,10 +104,10 @@ class Currency extends IntType implements CurrencyInterface
     /**
      * Set currency symbol
      *
-     * @param StringType $symbol
-     * @return Fluent Interface
+     * @param string $symbol
+     * @return CurrencyInterface
      */
-    public function setSymbol(StringType $symbol)
+    public function setSymbol(string $symbol): CurrencyInterface
     {
         $this->symbol = $symbol;
         return $this;
@@ -112,9 +116,9 @@ class Currency extends IntType implements CurrencyInterface
     /**
      * Return code of this currency
      *
-     * @return StringType
+     * @return string
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->code;
     }
@@ -122,10 +126,10 @@ class Currency extends IntType implements CurrencyInterface
     /**
      * Set currency code
      *
-     * @param StringType $code
-     * @return Fluent Interface
+     * @param string $code
+     * @return CurrencyInterface
      */
-    public function setCode(StringType $code)
+    public function setCode(string $code): CurrencyInterface
     {
         $this->code = $code;
         return $this;
@@ -134,10 +138,10 @@ class Currency extends IntType implements CurrencyInterface
     /**
      * Set long name for the currency
      *
-     * @param StringType $name
-     * @return Fluent Interface
+     * @param string $name
+     * @return CurrencyInterface
      */
-    public function setName(StringType $name)
+    public function setName(string $name): CurrencyInterface
     {
         $this->name = $name;
         return $this;
@@ -147,11 +151,11 @@ class Currency extends IntType implements CurrencyInterface
      * Return currency long name.
      * Will return currency code if not set
      *
-     * @return StringType
+     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
-        if(is_null($this->name)) {
+        if (is_null($this->name)) {
             return $this->code;
         }
 
@@ -163,10 +167,10 @@ class Currency extends IntType implements CurrencyInterface
      * NB. sprintf formatter
      * Default is '%s'
      *
-     * @param StringType $displayFormat
-     * @return Fluent Interface
+     * @param string $displayFormat
+     * @return CurrencyInterface
      */
-    public function setDisplayFormat(StringType $displayFormat)
+    public function setDisplayFormat(string $displayFormat): CurrencyInterface
     {
         $this->displayFormat = $displayFormat;
         return $this;
@@ -175,10 +179,10 @@ class Currency extends IntType implements CurrencyInterface
     /**
      * Set locale for display purposes
      *
-     * @param StringType $locale
-     * @return Fluent Interface
+     * @param string $locale
+     * @return CurrencyInterface
      */
-    public function setLocale(StringType $locale)
+    public function setLocale(string $locale): CurrencyInterface
     {
         $this->locale = $locale;
         return $this;
@@ -186,10 +190,10 @@ class Currency extends IntType implements CurrencyInterface
 
     /**
      * Set number of digits of precision for the currency
-     * @param IntType $precision
-     * @return Fluent Interface
+     * @param int $precision
+     * @return CurrencyInterface
      */
-    public function setPrecision(IntType $precision)
+    public function setPrecision(int $precision): CurrencyInterface
     {
         $this->precision = $precision;
         return $this;
@@ -200,27 +204,26 @@ class Currency extends IntType implements CurrencyInterface
      *
      * @return integer
      */
-    public function getPrecision()
+    public function getPrecision(): int
     {
-        return $this->precision->get();
+        return $this->precision;
     }
 
     /**
      * Set currency value, upscaling into an integer for internal storage
      *
-     * @param numeric|NumericType $value
+     * @param float $value
      *
-     * @return Fluent Interface
+     * @return CurrencyInterface
      * @throws \InvalidArgumentException
      */
-    public function setAsFloat($value)
+    public function setAsFloat($value): CurrencyInterface
     {
-        if (!(is_numeric($value) || $value instanceof NumericTypeInterface)) {
+        if (!is_numeric($value)) {
             throw new \InvalidArgumentException('value is not numeric');
         }
-        $val = is_object($value) ? $value->asFloatType()->get() : floatval($value);
-        $intVal = pow(10, $this->precision->get()) * $val;
-        parent::set($intVal);
+        $val = floatval($value);
+        $this->value =  intval(pow(10, $this->precision) * $val);
 
         return $this;
     }
@@ -229,23 +232,46 @@ class Currency extends IntType implements CurrencyInterface
      * return currency value as downscaled float value
      * @return float
      */
-    public function getAsFloat()
+    public function getAsFloat(): float
     {
-        return $this->value / pow(10, $this->precision->get());
+        return $this->value / pow(10, $this->precision);
     }
 
+    /**
+     * @param int $value
+     * @return CurrencyInterface
+     */
+    public function setValue(int $value): CurrencyInterface
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValue(): int
+    {
+        return $this->value;
+    }
 
     /**
      * Return currency amount formatted for display
      *
-     * @return StringType
+     * @return string
      */
-    public function display()
+    public function display(): string
     {
-        $formatter = new \NumberFormatter($this->locale->get(), \NumberFormatter::CURRENCY);
-        $formatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL, $this->symbol->get());
-        $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->precision->get());
+        $formatter = new \NumberFormatter($this->locale, \NumberFormatter::CURRENCY);
+        $formatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL, $this->symbol);
+        $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->precision);
 
-        return new StringType(sprintf($this->displayFormat, $formatter->format($this->getAsFloat())));
+        return sprintf($this->displayFormat, $formatter->format($this->getAsFloat()));
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->getValue();
     }
 }

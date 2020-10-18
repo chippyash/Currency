@@ -1,7 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Currency
- 
+
  * @author Ashley Kitson
  * @copyright Ashley Kitson, 2015, UK
  * @license GPL V3+ See LICENSE.md
@@ -9,28 +12,26 @@
 
 namespace Chippyash\Currency\Builder;
 
-
 use Chippyash\BuilderPattern\BuilderInterface;
 use Chippyash\BuilderPattern\RendererInterface;
-use Chippyash\Type\String\StringType;
 
 class CurrencyRenderer implements RendererInterface
 {
     /**
-     * @var StringType
+     * @var string
      */
     protected $namespace;
 
     /**
-     * @var StringType
+     * @var string
      */
     protected $outDir;
 
     /**
-     * @param StringType $namespace Namespace for new class
-     * @param StringType $outDir Directory in which to save the class definition PHP file
+     * @param string $namespace Namespace for new class
+     * @param string $outDir Directory in which to save the class definition PHP file
      */
-    public function __construct(StringType $namespace, StringType $outDir)
+    public function __construct(string $namespace, string $outDir)
     {
         $this->namespace = $namespace;
         $this->outDir = $outDir;
@@ -42,12 +43,12 @@ class CurrencyRenderer implements RendererInterface
      * @param BuilderInterface $builder Builder to be used for rendering
      * @return string Text of class that was built
      */
-    public function render(BuilderInterface $builder)
+    public function render(BuilderInterface $builder): string
     {
-        list($code, $name, $symbol, $displayFormat, $locale, $precision, $value) = array_values($builder->getResult());
+        [$code, $name, $symbol, $displayFormat, $locale, $precision, $value] = array_values($builder->getResult());
         $tpl = file_get_contents(__DIR__ . '/CurrencyClass.tpl');
         $out = str_replace(
-            array(
+            [
                 '<namespace>',
                 '<name>',
                 '<code>',
@@ -56,9 +57,9 @@ class CurrencyRenderer implements RendererInterface
                 '<precision>',
                 '<displayFormat>',
                 '<locale>'
-            ),
-            array(
-                $this->namespace->get(),
+            ],
+            [
+                $this->namespace,
                 $name,
                 $code,
                 $value,
@@ -66,9 +67,10 @@ class CurrencyRenderer implements RendererInterface
                 $precision,
                 $displayFormat,
                 $locale
-            ),
-            $tpl);
-        file_put_contents($this->outDir->get() . "/{$code}.php", $out);
+            ],
+            $tpl
+        );
+        file_put_contents($this->outDir . "/{$code}.php", $out);
 
         return $out;
     }

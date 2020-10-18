@@ -9,8 +9,6 @@
 
 namespace Chippyash\Test\Currency\Builder;
 
-
-use Chippyash\Type\String\StringType;
 use Chippyash\Currency\Builder\CurrencyDirector;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
@@ -37,7 +35,7 @@ class CurrencyDirectorTest extends \PHPUnit_Framework_TestCase
         $this->saveLocale = locale_get_default();
         locale_set_default('en_GB');
         $this->rootDir = vfsStream::setup('foo');
-        $this->sut = new CurrencyDirector(new StringType('GBP'), new StringType('foo\bar'), new StringType($this->rootDir->url()));
+        $this->sut = new CurrencyDirector('GBP', 'foo\bar', $this->rootDir->url());
     }
 
     protected function tearDown()

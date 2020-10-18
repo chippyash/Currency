@@ -1,6 +1,6 @@
 {
   "name": "chippyash/currency",
-  "description": "Locale aware currency support based on strong types",
+  "description": "Locale aware currency support",
   "minimum-stability": "stable",
   "homepage" : "http://zf4.biz/packages?utm_source=packagist&utm_medium=web&utm_campaign=blinks&utm_content=currency",
   "license": "BSD-3-Clause",
@@ -12,18 +12,35 @@
     }
   ],
   "require": {
-    "php":">=5.6",
-    "chippyash/strong-type": ">=5,<6",
-    "ext-intl":"*"
+    "php":">=7.2",
+    "ext-intl":"*",
+    "ext-xml": "*",
+    "ext-simplexml": "*",
+    "ext-dom": "*"
   },
   "require-dev": {
     "phpunit/phpunit": ">=4.8.9,<5",
     "chippyash/builderpattern": ">=3,<4",
-    "mikey179/vfsStream": "v1.5.0"
+    "mikey179/vfsstream": "v1.5.0",
+    "symplify/easy-coding-standard": "^6.1"
   },
   "autoload": {
     "psr-0": {
       "Chippyash\\Currency\\": "src"
     }
+  },
+  "repositories": [{
+    "type": "composer",
+    "url": "https://satis.ops.zinc.systems"
+  }],
+  "scripts": {
+    "lint:run": "vendor/bin/ecs check src",
+    "lint:fix": "vendor/bin/ecs check --fix src",
+    "test:run": "vendor/bin/phpunit -c test/phpunit.xml test/"
+  },
+  "scripts-descriptions": {
+    "lint:run": "Run code linter and look for problems (suggestion: set up your IDE to do this)",
+    "lint:fix": "Run linter and fix (automatically) any issues if possible",
+    "test:run": "Run PHP unit tests and display coverage (suggestion: set up your IDE to do this)"
   }
 }

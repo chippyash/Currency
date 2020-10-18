@@ -2,19 +2,19 @@
 
 ## Quality Assurance
 
-![PHP 5.6](https://img.shields.io/badge/PHP-5.6-blue.svg)
 ![PHP 7](https://img.shields.io/badge/PHP-7-blue.svg)
 [![Build Status](https://travis-ci.org/chippyash/Currency.svg?branch=master)](https://travis-ci.org/chippyash/Currency)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ef34192bb845b0b8a51a/maintainability)](https://codeclimate.com/github/chippyash/Currency/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ef34192bb845b0b8a51a/test_coverage)](https://codeclimate.com/github/chippyash/Currency/test_coverage)
 
-Please note, developer support for PHP 5.3/5.4 was withdrawn as of version 3.
+Please note:
+
+- developer support for PHP 5.3/5.4 was withdrawn as of version 3.
+- developer support for PHP 5.5 was withdrawn at version 4.
+- developer support for PHP <7.2 was withdrawn as of version 5.
 
 See the [Test Contract](https://github.com/Chippyash/currency/blob/master/docs/Test-Contract.md)
 
-Please note that developer support for PHP5.5 was withdrawn at version 4.0.0 of this library.
-If you need support for PHP 5.5, please use a version `>=3,<4`
- 
 ## What?
 
 Provides strong type implementation of an [ISO-4217](http://en.wikipedia.org/wiki/ISO_4217) Current Currency.  Includes 
@@ -53,12 +53,6 @@ data/symbols.html file needs a/ refactoring into an xml file and b/ having missi
  it is a manual task to transcribe.
 
 Check out [ZF4 Packages](http://zf4.biz/packages?utm_source=github&utm_medium=web&utm_campaign=blinks&utm_content=currency) for more packages
-
-### Roadmap
-
-V1 - support for StrongType native PHP integer based currencies
-
-V3 - support for StrongType GMPIntType based currencies
 
 ## How
 
@@ -107,7 +101,7 @@ Create currency directly:
     $foo = new Currency($value, $code, $symbol, $precision, $name, $displayFormat);
 </pre>
 
-In all ways, the Currency that you have created acts as an IntType. An additional method is supplied:
+In all ways, the Currency that you have created acts as an Integer. An additional method is supplied:
 
 * display()
 
@@ -135,17 +129,15 @@ will display:
 
 1 200,26 £
 
-In both cases, $gbp->get() (or simply $gbp()) will return 120026, i.e. an int.
+In both cases, $gbp->getValue() will return 120026, i.e. an int.
 
 If you need the value as a float downscaled according to its precision use getAsFloat()
 
-As alluded to above, the Currency class is based on the strongtype IntType.  This is because integer maths is far more
-accurate than floating point maths and if you were to throw some Currencies at the Chippyash/math-type-calculator then
-the results would be more accurate and consistent.  The class knows how to convert to/from int/float using the precision
+As alluded to above, the Currency class is based on the Integer.  This is because integer maths is far more
+accurate than floating point maths.  The class knows how to convert to/from int/float using the precision
 parameter and can therefore maintain long term accuracy.
 
-If you don't want to use the math-type-calculator, you can retrieve the currency's internal value via the get()
-method. You can set its value either via the set() method using an integer value or via the setAsFloat() method using
+You can set its value either via the set() method using an integer value or via the setAsFloat() method using
 a float value that will be upscaled to the internal integer value using the Currency's precision value. e.g. assuming
 a precision == 2, then:
 
@@ -155,7 +147,7 @@ a precision == 2, then:
     $curr->setAsFloat(20.00);
 </pre>
 
-Please note that the strongtype magic \__toString() method, will return the value as stringified integer.  Use the
+Please note that the magic \__toString() method, will return the value as stringified integer.  Use the
  display() method for locale aware display of the currency.
  
 #### Generating your own application hard currencies
@@ -194,10 +186,6 @@ In either case, you'll find three classes have been generated in your target dir
 - AUD.php
 - GBP.php
 - USD.php
-
-### Class diagram
-
-![currency class diagram](https://github.com/Chippyash/currency/blob/master/docs/class-diagram.jpg)
 
 ### Changing the library
 
@@ -309,3 +297,5 @@ V4.0.1 fix namespace issue with native get_locale
 V4.1.0 ability to get currency precision
 
 V4.2.0 Change of license from GPL V3 to BSD 3 Clause
+
+V5.0.0 Remove dependency on chippyash/strongtype. BC break. Remove support for PHP <7.2

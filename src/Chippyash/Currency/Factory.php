@@ -1,7 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Currency
- 
+
  * @author Ashley Kitson
  * @copyright Ashley Kitson, 2015, UK
  * @license GPL V3+ See LICENSE.md
@@ -9,39 +12,36 @@
 
 namespace Chippyash\Currency;
 
-
-use Chippyash\Type\String\StringType;
-
 abstract class Factory
 {
     /**
      * @var SimpleXMLElement
      */
-    static protected $definitions;
+    protected static $definitions;
 
     /**
      * Locale to use for currency creation
      * Default is locale_get_default() if not set
      * @see setLocale()
      *
-     * @var StringType
+     * @var string
      */
-    static protected $locale;
+    protected static $locale;
 
     /**
      * Create a currency
      *
      * @param string $code  Currency 3 letter ISO4217 code
-     * @param int    $value initial value for currency
+     * @param float  $value initial value for currency
      *
      * @return Currency
      *
      * @throws \ErrorException
      */
-    public static function create($code, $value = 0)
+    public static function create(string $code, float $value = 0): Currency
     {
         $cd = strtoupper($code);
-        list($symbol, $precision, $name) = self::getDefinition($cd);
+        [$symbol, $precision, $name] = self::getDefinition($cd);
         $crcy = new Currency($value, $cd, $symbol, $precision, $name);
         $crcy->setLocale(self::getLocale());
 
@@ -53,21 +53,21 @@ abstract class Factory
      *
      * @param string $locale
      */
-    public static function setLocale($locale)
+    public static function setLocale($locale): void
     {
-        self::$locale = new StringType($locale);
+        self::$locale = $locale;
     }
 
     /**
      * Get locale to be used for currency creation
      * Will default to locale_get_default() if not set
      *
-     * @return StringType
+     * @return string
      */
-    public static function getLocale()
+    public static function getLocale(): string
     {
         if (empty(self::$locale)) {
-            self::$locale = new StringType(\locale_get_default());
+            self::$locale = \locale_get_default();
         }
 
         return self::$locale;
@@ -81,7 +81,7 @@ abstract class Factory
      * @return array ['symbol','precision', 'name']
      * @throws \ErrorException
      */
-    protected static function getDefinition($code)
+    protected static function getDefinition(string $code): array
     {
         $currencies = self::getDefinitions();
         $nodes = $currencies->xpath("//currency[@code='{$code}']");
@@ -91,13 +91,11 @@ abstract class Factory
 
         $cNode = $nodes[0];
 
-        $def = array(
+        return [
             self::createSymbol($cNode->symbol, $code),
             intval($cNode->exponent),
             self::createName($cNode),
-        );
-
-        return $def;
+        ];
     }
 
     /**
@@ -105,7 +103,7 @@ abstract class Factory
      *
      * @return \SimpleXMLElement
      */
-    protected static function getDefinitions()
+    protected static function getDefinitions(): \SimpleXMLElement
     {
         if (empty(self::$definitions)) {
             self::$definitions = \simplexml_load_file(__DIR__ . '/currencies.xml');
@@ -122,9 +120,9 @@ abstract class Factory
      *
      * @return string
      */
-    protected static function createSymbol(\SimpleXMLElement $sNode, $code)
+    protected static function createSymbol(\SimpleXMLElement $sNode, string $code): string
     {
-        switch((string) $sNode['type']) {
+        switch ((string) $sNode['type']) {
             case 'UCS':
                 $symbol = (string) $sNode['UTF-8'];
                 break;
@@ -145,7 +143,7 @@ abstract class Factory
      *
      * @return string
      */
-    protected static function createName(\SimpleXMLElement $currency)
+    protected static function createName(\SimpleXMLElement $currency): string
     {
         $locale = self::getLocale();
         //first - see if we have an exact locale match
@@ -155,7 +153,7 @@ abstract class Factory
         }
 
         //next, see if we have a name for the language part of the locale
-        $lang = \locale_get_primary_language($locale());
+        $lang = \locale_get_primary_language($locale);
         $nodes = $currency->xpath("name[@lang='{$lang}']");
         if (count($nodes) > 0) {
             return (string) $nodes[0];

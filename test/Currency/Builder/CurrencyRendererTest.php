@@ -10,7 +10,6 @@
 namespace Chippyash\Test\Currency\Builder;
 
 use Chippyash\Currency\Builder\CurrencyRenderer;
-use Chippyash\Type\String\StringType;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamFile;
 
@@ -34,7 +33,7 @@ class CurrencyRendererTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->rootDir = vfsStream::setup('foo');
-        $this->sut = new CurrencyRenderer(new StringType('foo\bar'), new StringType($this->rootDir->url()));
+        $this->sut = new CurrencyRenderer('foo\bar', $this->rootDir->url());
     }
 
 
