@@ -89,7 +89,7 @@ class CurrencyTest extends \PHPUnit\Framework\TestCase {
     public function testYouCanSetTheLocale()
     {
         $this->sut->setLocale('fr_FR');
-        $this->assertEquals('1 200,26 £', $this->sut->display());
+        $this->assertEquals('1 200,26 £', $this->stripNbsp($this->sut->display()));
     }
 
     public function testYouCanSetAndGetThePrecision()
@@ -134,10 +134,16 @@ class CurrencyTest extends \PHPUnit\Framework\TestCase {
     {
         $this->assertEquals('£1,200.26', $this->sut->display());
         $this->sut->setLocale('fr_FR');
-        $this->assertEquals('1 200,26 £', $this->sut->display());
+        $this->assertEquals('1 200,26 £', $this->stripNbsp($this->sut->display()));
         $this->sut->setLocale('de_DE');
-        $this->assertEquals('1.200,26 £', $this->sut->display());
+        $this->assertEquals('1.200,26 £', $this->stripNbsp($this->sut->display()));
 
     }
 
+    protected function stripNbsp(string $val): string
+    {
+        $s = str_replace(["\xe2\x80\xaf", "\xc2\xa0", "\x20\x2f"], [' ', ' ', ' '], $val);
+//        $obj = array_map(function($x){return "{$x} = ". strval(dechex(ord($x))) . ";";},str_split($s));
+        return $s;
+    }
 }

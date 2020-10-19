@@ -32,19 +32,9 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
 
     <testsuites>
         <testsuite name="Chippyash/Currency Test Suite">
-            <directory phpVersion="5.4.0" phpVersionOperator=">=">./test/</directory>
+            <directory phpVersion="7.2.0" phpVersionOperator=">=">./test/</directory>
         </testsuite>
     </testsuites>
-    <!--
-     ! The <filter> element and its children can be used to configure the
-     ! blacklist and whitelist for the code coverage reporting.
-     !-->
-    <filter>
-        <blacklist>
-            <directory>./vendor</directory>
-            <directory>./bin</directory>
-        </blacklist>
-    </filter>
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

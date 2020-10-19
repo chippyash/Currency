@@ -31,19 +31,19 @@ testSuiteLoaderFile="/path/to/StandardTestSuiteLoader.php"
          timeoutForLargeTests="60"
          verbose="false">
 
-    <!--
-     ! The <filter> element and its children can be used to configure the
-     ! blacklist and whitelist for the code coverage reporting.
-     !-->
-<!--    <filter>-->
-<!--        <blacklist>-->
-<!--            <directory>../vendor</directory>-->
-<!--            <directory>../bin</directory>-->
-<!--            <file>../src/Chippyash/Currency/CurrencyInterface.php</file>-->
-<!--        </blacklist>-->
-<!--    </filter>-->
-
-
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>./src</directory>
+            <exclude>
+                <directory>./docs</directory>
+                <directory>./test</directory>
+                <directory>./vendor</directory>
+                <directory>./data</directory>
+                <directory>./bin</directory>
+                <file>./src/Chippyash/Currency/CurrencyInterface.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
 
 
